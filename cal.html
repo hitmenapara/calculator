@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculeter</title>
+	<style type="text/css">
+		html,body{
+
+			margin: 0px;
+		}
+		.div{
+			width: 500px;
+			margin: auto;
+			height: 550px;
+			background-color: #39c1c1;
+		}
+
+		.input{
+			width: 275px;
+			margin: auto;
+			padding-top: 15px;
+		}
+		.input input{
+			width: 258px;
+			height: 50px;
+			font-size: 20px;
+		}
+		.grid{
+			width: 500px;
+			display: grid;
+			margin-top: 10px;
+			grid-template-columns: auto auto auto auto;
+			justify-content: center;
+			grid-gap: 20px;
+		}
+		.grid2{
+			width:275px;
+			display: grid;
+			margin:auto; 
+			margin-top: 10px;
+			grid-template-columns: auto auto auto;
+			grid-gap: 20px;
+		}
+		.grid button{
+			height: 50px;
+			width: 50px;
+		}
+		.grid2 button{
+			width: 100%;
+		}
+		.grid2 button{
+			height: 40px;
+		}
+	</style>
+	<script>
+		function nu1(val){
+			document.getElementById('num1').value += val.value;
+		}
+		function evaltotal(){
+			document.getElementById("num1").value = eval(document.getElementById('num1').value );
+		}
+		function nu2(val){
+			var c= document.getElementById('num1').value / 100;
+			console.log(c);
+		}
+		function checkKey(e) {
+		}
+		function nu3()
+		{
+    		var event = window.event ? window.event : e;
+    		console.log(event.keyCode);
+			document.getElementById('num1').value = document.getElementById('num1').value.slice(0 , -1);
+		}
+	</script>
+</head>
+<body>
+	<div class="div">
+		<div><h1 style="text-align: center;color: white;margin: 0px; padding: 17px 0 0 0;">calculator</h1></div>
+		<div class="input">
+			<input type="text" id="num1">
+		</div>
+		<div class="grid">
+			<button value="1" onclick="nu1(this)">1</button> 
+			<button value="2" onclick="nu1(this)">2</button> 
+			<button value="3" onclick="nu1(this)">3</button> 
+			<button value="+" onclick="nu1(this)">+</button> 
+			<button value="4" onclick="nu1(this)">4</button> 
+			<button value="5" onclick="nu1(this)">5</button> 
+			<button value="6" onclick="nu1(this)">6</button> 
+			<button value="-" onclick="nu1(this)">-</button> 
+			<button value="7" onclick="nu1(this)">7</button> 
+			<button value="8" onclick="nu1(this)">8</button> 
+			<button value="9" onclick="nu1(this)">9</button> 
+			<button value="/" onclick="nu1(this)">/</button> 
+			<button value="." onclick="nu1(this)">.</button> 
+			<button value="0" onclick="nu1(this)">0</button> 
+			<button value="%" onclick="nu2(this)">%</button> 
+			<button value="*" onclick="nu1(this)">*</button>
+		</div>
+		<div class="grid2">
+			<button id="demo4" value="submit" onclick="evaltotal()">=</button>
+			<button onclick="document.getElementById('num1').value ='';">ac</button>
+			<button onclick="nu3()"><-</button>
+		</div>
+	</div>
+</body>
+</html>
